@@ -1,0 +1,15 @@
+table{
+    border: solid;
+}
+th{
+    padding : 1em;
+    border-right: solid 0.1em ;
+}
+td{
+    padding : 1em;
+    border-top: solid 0.1em ;
+    border-right: solid 0.1em ;
+}
+span{
+    color :red;
+}
