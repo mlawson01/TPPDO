@@ -28,6 +28,8 @@ if(isset($_POST['btnCnx'])){
 
         if(empty($array)){
             $messageErreurCnx['userInconnu']='L\'utilisateur n\'existe pas';
+            //header permet de faire des redirections en php => header('Location : url ou page de redirection'); exit; à la fin pour éviter d'executer le reste du code
+
         }
         else{
             $accesOk = true;
@@ -97,14 +99,13 @@ if(isset($_POST['btnEnrg'])){
         $_SESSION['ville'] = $villeModif;
         $_SESSION['cp'] = $cpModif;
         $accesOk = true;
-        $messageOK ='Vos modifications ont bien été prise en comptre';
-
+        $messageOK ='Vos modifications ont bien été prise en compte';
     }
     else{
         $accesOk = true;
-
     }
 }
+
 
 ?>
 
@@ -171,7 +172,7 @@ if(isset($_POST['btnEnrg'])){
                 <input type="text" id="ville" name="ville" value="<?=(isset($_SESSION['ville']))? $_SESSION['ville']:'' ?>">
                 <span><?=(isset($messageErreurEnrg['ville']))? $messageErreurEnrg['ville'] : '' ?></span>
             </div>
-            <button name="btnEnrg">Enregistrer</button>
+            <button name="btnEnrg">Enregistrer</button><span><?=(isset($messageOK))? $messageOK : '' ?></span>
         </fieldset>
     </form>
 </body>
